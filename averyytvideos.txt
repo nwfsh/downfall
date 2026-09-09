@@ -1,0 +1,28 @@
+AVERY ANALYSIS OF YOUTUBE VIDEO
+
+capitalism vs socialism, 
+https://youtu.be/YJQSuUZdcV4?si=wKrcWRmf7GThn9IV
+some videos show apparent low polarization not because the topic itself lacks division, 
+but because audience consensus formed around a shared grievance outside the debate's actual sides 
+(e.g. moderator conduct), masking topic-level sentiment
+some comments are about how the debate format is very good
+
+"Comments relying on implicit cultural references or in-jokes are not 
+reliably classifiable by this pipeline" 
+
+Youtube has such a joking culture where all the top comments are infact jokes 
+
+Check: are the top-liked unclassified comments disproportionately jokes, 
+compared to the overall like distribution? If yes, that's a checkable, reportable finding 
+— "top-engagement comments skew toward humor rather than partisan stance-taking, 
+even on divisive topics."
+
+"YouTube debate comment sections are dominated by reactive commentary on discrete moments
+ (reactions, expressions, specific exchanges) rather than sustained engagement with the topic's 
+ substance. This means comment-level sentiment analysis captures audience reaction to performance 
+ and specific moments at least as much as it captures genuine topical polarization — a distinction 
+ worth keeping in mind when interpreting the polarization score."
+
+ https://youtu.be/vx-Si9gbijA?si=KN_-5mZpcJvm6FKj
+ antifeminist vs male feminist
+ - actual ragebait like a lot of comments were angry 

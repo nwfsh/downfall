@@ -1,0 +1,102 @@
+{
+  "kind": "youtube#videoListResponse",
+  "etag": "lVDcGym4qDrXFaxyooKwIYf-MQY",
+  "items": [
+    {
+      "kind": "youtube#video",
+      "etag": "UGjuqFNAnnxvKhjwpWORctTtuRs",
+      "id": "giZy9gEydzM",
+      "snippet": {
+        "publishedAt": "2024-03-03T17:00:35Z",
+        "channelId": "UCJjSDX-jUChzOEyok9XYRJQ",
+        "title": "Is Cheating Always Wrong? | Middle Ground",
+        "description": "Click https://betterhelp.com/jubileemedia for 10% off your first month of therapy with our sponsor BetterHelp. Join over 4 million people who\u2019ve met with a therapist on BetterHelp and started living a healthier, happier life.\n\nHey you \ud83e\udef5 Wanna be in a Jubilee video? https://bit.ly/be-in-a-video\n\nLET\u2019S BE FRIENDS\nInstagram: https://www.instagram.com/jubileemedia/\nTikTok: https://www.tiktok.com/@jubilee?lang=en\nWebsite: https://www.jubileemedia.com\n\nOUR LOVE + DATING CHANNEL \ud83c\udf51\nYouTube: https://www.youtube.com/@lovecommanectar\nInstagram: https://www.instagram.com/lovecommanectar  \nNectar app: https://lovecommanectar.co/497Ru93 \n\nARE YOU A BRAND? WANNA WORK WITH US?\nEmail partnerships@jubileemedia.com\n\nFEATURING \nGen: https://www.youtube.com/@GEN\nChelsea: https://www.instagram.com/theowandthewife\nChris: https://www.instagram.com/chrissirois/\nEm: https://www.instagram.com/emgjen\nJillian: https://www.instagram.com/jillian.batt\nKeith: https://www.instagram.com/_hartwellfit\nRaven: https://www.instagram.com/raventhomashartwell\nSophie: https://www.tiktok.com/@firebreathing_sophie\n\nCREDITS\nCasting Coordinator: Bridget McGuinness\nCasting Associate Producer: Karsyn Hughes\nProduction Manager: Emma Pek\nEquipment Coordinator: Pat Saulo\nAssistant Editor: Kirsten Hoang\nPost-Production Coordinator: Claire Chung\n\nShop Spectrum the game! https://spectrum.jubileemedia.com. Every purchase helps us create your favorite shows - thanks for your support!\n\n0:00 intro\n0:53 I would forgive my partner if they cheated on me\n9:57 Emotional cheating is worse than physical cheating\n16:34 I would date someone eho cheated on others in the past\n25:30 There are much worse things that can break a relationship than cheating\n25:41 it's okay to express attention to others while in a relationship\n34:48 If you cheat on someone you are not in love with them\n44:47 I would rather not know that I was cheated on\n57:16 It's not always the cheater's fault when they cheat\n1:04:02 final thoughts",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/giZy9gEydzM/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/giZy9gEydzM/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/giZy9gEydzM/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/giZy9gEydzM/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/giZy9gEydzM/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Jubilee",
+        "tags": [
+          "jubilee",
+          "jubilee media",
+          "jubilee project",
+          "middle ground",
+          "spectrum",
+          "odd man out",
+          "versus 1",
+          "embrace empathy",
+          "live deeper",
+          "love language",
+          "blind devotion",
+          "Odd One Out",
+          "Game Show",
+          "Dating Show",
+          "Nectar",
+          "Ask Me Anything",
+          "Gen Z",
+          "Millennial",
+          "loveprint",
+          "jason y lee"
+        ],
+        "categoryId": "24",
+        "liveBroadcastContent": "none",
+        "defaultLanguage": "en",
+        "localized": {
+          "title": "Is Cheating Always Wrong? | Middle Ground",
+          "description": "Click https://betterhelp.com/jubileemedia for 10% off your first month of therapy with our sponsor BetterHelp. Join over 4 million people who\u2019ve met with a therapist on BetterHelp and started living a healthier, happier life.\n\nHey you \ud83e\udef5 Wanna be in a Jubilee video? https://bit.ly/be-in-a-video\n\nLET\u2019S BE FRIENDS\nInstagram: https://www.instagram.com/jubileemedia/\nTikTok: https://www.tiktok.com/@jubilee?lang=en\nWebsite: https://www.jubileemedia.com\n\nOUR LOVE + DATING CHANNEL \ud83c\udf51\nYouTube: https://www.youtube.com/@lovecommanectar\nInstagram: https://www.instagram.com/lovecommanectar  \nNectar app: https://lovecommanectar.co/497Ru93 \n\nARE YOU A BRAND? WANNA WORK WITH US?\nEmail partnerships@jubileemedia.com\n\nFEATURING \nGen: https://www.youtube.com/@GEN\nChelsea: https://www.instagram.com/theowandthewife\nChris: https://www.instagram.com/chrissirois/\nEm: https://www.instagram.com/emgjen\nJillian: https://www.instagram.com/jillian.batt\nKeith: https://www.instagram.com/_hartwellfit\nRaven: https://www.instagram.com/raventhomashartwell\nSophie: https://www.tiktok.com/@firebreathing_sophie\n\nCREDITS\nCasting Coordinator: Bridget McGuinness\nCasting Associate Producer: Karsyn Hughes\nProduction Manager: Emma Pek\nEquipment Coordinator: Pat Saulo\nAssistant Editor: Kirsten Hoang\nPost-Production Coordinator: Claire Chung\n\nShop Spectrum the game! https://spectrum.jubileemedia.com. Every purchase helps us create your favorite shows - thanks for your support!\n\n0:00 intro\n0:53 I would forgive my partner if they cheated on me\n9:57 Emotional cheating is worse than physical cheating\n16:34 I would date someone eho cheated on others in the past\n25:30 There are much worse things that can break a relationship than cheating\n25:41 it's okay to express attention to others while in a relationship\n34:48 If you cheat on someone you are not in love with them\n44:47 I would rather not know that I was cheated on\n57:16 It's not always the cheater's fault when they cheat\n1:04:02 final thoughts"
+        },
+        "defaultAudioLanguage": "en"
+      },
+      "contentDetails": {
+        "duration": "PT1H6M14S",
+        "dimension": "2d",
+        "definition": "hd",
+        "caption": "true",
+        "licensedContent": true,
+        "contentRating": {},
+        "projection": "rectangular"
+      },
+      "status": {
+        "uploadStatus": "processed",
+        "privacyStatus": "public",
+        "license": "youtube",
+        "embeddable": true,
+        "publicStatsViewable": false,
+        "madeForKids": false
+      },
+      "statistics": {
+        "viewCount": "2497554",
+        "likeCount": "39024",
+        "favoriteCount": "0",
+        "commentCount": "7107"
+      }
+    }
+  ],
+  "pageInfo": {
+    "totalResults": 1,
+    "resultsPerPage": 1
+  }
+}

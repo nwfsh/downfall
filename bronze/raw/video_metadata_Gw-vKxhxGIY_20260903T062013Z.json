@@ -1,0 +1,102 @@
+{
+  "kind": "youtube#videoListResponse",
+  "etag": "P863r29OM9btx9uzY7hax8XDgPQ",
+  "items": [
+    {
+      "kind": "youtube#video",
+      "etag": "bnrim3YJqwcpmOSWdEy3vmCyZxs",
+      "id": "Gw-vKxhxGIY",
+      "snippet": {
+        "publishedAt": "2025-09-14T16:00:28Z",
+        "channelId": "UCJjSDX-jUChzOEyok9XYRJQ",
+        "title": "Is Being Poor a Choice? Unhoused vs Millionaires | Middle Ground",
+        "description": "Hey you \ud83d\udc48 Wanna be in a Jubilee video? https://bit.ly/be-in-a-video\n\nLET\u2019S BE FRIENDS\nInstagram: https://www.instagram.com/jubileemedia/\nTikTok: https://www.tiktok.com/@jubilee?lang=en\nWebsite: https://www.jubileemedia.com\n\nOUR LOVE + DATING CHANNEL \ud83c\udf51\nYouTube: https://www.youtube.com/@nectarcrush\nInstagram: https://www.instagram.com/lovecommanectar  \nNectar app: https://lovecommanectar.co/m/download-nectar\n\nARE YOU A BRAND? WANNA WORK WITH US?\nEmail partnerships@jubileemedia.com\n\nLIKE EDITING VIDEOS?\nExplore how our official partner OpusClip and OpusSearch can streamline your short-form post-production process today!\nhttps://bit.ly/4iTscB7 \n\nFEATURING \nLaney:\nhttps://www.instagram.com/787laney\nMilagro:\nhttps://www.tiktok.com/@cupidsoulja\nCaleb:\nhttps://www.tiktok.com/@daddyjustdaddyxo\nJack:\nhttps://www.tiktok.com/@jackbasilcooper\nKate:\nhttps://www.instagram.com/russiankatee\nRene:\nhttps://www.instagram.com/renelacad\nTaylor:\nhttps://www.instagram.com/taylormoney.co\n\nTIMECODES\n00:00 Intro\n00:25 Being poor is a choice\n14:49 Capitalism creates homelessness\n23:23 Homeless encampments can be dangerous and should be cleared\n35:54 The system is rigged to keep the rich rich and the poor poor\n44:40 Wealthy people have a duty to fix homelessness\n51:23 If you give people free housing, they won't be motivated to change their lives",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/Gw-vKxhxGIY/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/Gw-vKxhxGIY/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/Gw-vKxhxGIY/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/Gw-vKxhxGIY/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/Gw-vKxhxGIY/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Jubilee",
+        "tags": [
+          "jubilee",
+          "jubilee media",
+          "jubilee project",
+          "middle ground",
+          "spectrum",
+          "odd man out",
+          "versus 1",
+          "embrace empathy",
+          "live deeper",
+          "love language",
+          "blind devotion",
+          "Odd One Out",
+          "Game Show",
+          "Dating Show",
+          "Nectar",
+          "Ask Me Anything",
+          "Gen Z",
+          "Millennial",
+          "loveprint",
+          "jason y lee"
+        ],
+        "categoryId": "24",
+        "liveBroadcastContent": "none",
+        "defaultLanguage": "en",
+        "localized": {
+          "title": "Is Being Poor a Choice? Unhoused vs Millionaires | Middle Ground",
+          "description": "Hey you \ud83d\udc48 Wanna be in a Jubilee video? https://bit.ly/be-in-a-video\n\nLET\u2019S BE FRIENDS\nInstagram: https://www.instagram.com/jubileemedia/\nTikTok: https://www.tiktok.com/@jubilee?lang=en\nWebsite: https://www.jubileemedia.com\n\nOUR LOVE + DATING CHANNEL \ud83c\udf51\nYouTube: https://www.youtube.com/@nectarcrush\nInstagram: https://www.instagram.com/lovecommanectar  \nNectar app: https://lovecommanectar.co/m/download-nectar\n\nARE YOU A BRAND? WANNA WORK WITH US?\nEmail partnerships@jubileemedia.com\n\nLIKE EDITING VIDEOS?\nExplore how our official partner OpusClip and OpusSearch can streamline your short-form post-production process today!\nhttps://bit.ly/4iTscB7 \n\nFEATURING \nLaney:\nhttps://www.instagram.com/787laney\nMilagro:\nhttps://www.tiktok.com/@cupidsoulja\nCaleb:\nhttps://www.tiktok.com/@daddyjustdaddyxo\nJack:\nhttps://www.tiktok.com/@jackbasilcooper\nKate:\nhttps://www.instagram.com/russiankatee\nRene:\nhttps://www.instagram.com/renelacad\nTaylor:\nhttps://www.instagram.com/taylormoney.co\n\nTIMECODES\n00:00 Intro\n00:25 Being poor is a choice\n14:49 Capitalism creates homelessness\n23:23 Homeless encampments can be dangerous and should be cleared\n35:54 The system is rigged to keep the rich rich and the poor poor\n44:40 Wealthy people have a duty to fix homelessness\n51:23 If you give people free housing, they won't be motivated to change their lives"
+        },
+        "defaultAudioLanguage": "en"
+      },
+      "contentDetails": {
+        "duration": "PT56M58S",
+        "dimension": "2d",
+        "definition": "hd",
+        "caption": "false",
+        "licensedContent": true,
+        "contentRating": {},
+        "projection": "rectangular"
+      },
+      "status": {
+        "uploadStatus": "processed",
+        "privacyStatus": "public",
+        "license": "youtube",
+        "embeddable": true,
+        "publicStatsViewable": false,
+        "madeForKids": false
+      },
+      "statistics": {
+        "viewCount": "1178408",
+        "likeCount": "20671",
+        "favoriteCount": "0",
+        "commentCount": "12504"
+      }
+    }
+  ],
+  "pageInfo": {
+    "totalResults": 1,
+    "resultsPerPage": 1
+  }
+}
