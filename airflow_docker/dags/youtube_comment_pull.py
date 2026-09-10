@@ -1,7 +1,7 @@
 from datetime import datetime
 from airflow import DAG # no worries abt yellow lines its installed inisde docker not in my .venv
 from airflow.operators.python import PythonOperator
-from ingestion.bronze_youtube_ingest import ingest_video
+from ingestion.bronze_youtube_ingest_comments import ingest_video
 
 
 VIDEO_IDS = [
