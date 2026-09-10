@@ -185,13 +185,29 @@ if __name__ == "__main__":
     # TODO: fill in real channel IDs. Trisha Paytas and Ryan Higa have no
     # single clean event date — decide their windows before running, or
     # leave start_date/end_date out entirely to pull full channel history.
-    CALIBRATION_SET = [
-        {"label": "James Charles", "channel_id": "TODO_channel_id", "start_date": "2019-04-01", "end_date": "2019-08-01"},
-        {"label": "PewDiePie", "channel_id": "TODO_channel_id", "start_date": "2016-12-01", "end_date": "2017-04-01"},
-        {"label": "Trisha Paytas", "channel_id": "TODO_channel_id", "start_date": "TODO_start", "end_date": "TODO_end"},
-        {"label": "Ryan Higa", "channel_id": "TODO_channel_id", "start_date": "TODO_start", "end_date": "TODO_end"},
-        {"label": "Stephanie Soo", "channel_id": "TODO_channel_id", "start_date": "2019-11-01", "end_date": "2020-03-01"},
-        {"label": "Logan Paul", "channel_id": "TODO_channel_id", "start_date": "2017-11-01", "end_date": "2018-03-01"},
-    ]
+    # CALIBRATION_SET = [
+    #     {"label": "James Charles", "channel_id": "TODO_channel_id", "start_date": "2019-04-01", "end_date": "2019-08-01"},
+    #     {"label": "PewDiePie", "channel_id": "TODO_channel_id", "start_date": "2016-12-01", "end_date": "2017-04-01"},
+    #     {"label": "Trisha Paytas", "channel_id": "TODO_channel_id", "start_date": "TODO_start", "end_date": "TODO_end"},
+    #     {"label": "Ryan Higa", "channel_id": "TODO_channel_id", "start_date": "TODO_start", "end_date": "TODO_end"},
+    #     {"label": "Stephanie Soo", "channel_id": "TODO_channel_id", "start_date": "2019-11-01", "end_date": "2020-03-01"},
+    #     {"label": "Logan Paul", "channel_id": "TODO_channel_id", "start_date": "2017-11-01", "end_date": "2018-03-01"},
+    # ]
 
-    process_creators(CALIBRATION_SET)
+    # process_creators(CALIBRATION_SET)
+
+    # quick test
+    # count = get_channel_video_count("UCenxjWEkb0Sv67vejOgZ3Tg")
+    # ids = get_channel_video_ids_in_window("UCenxjWEkb0Sv67vejOgZ3Tg", "2026-05-01", "2026-06-01")
+    # print(ids[:5])
+
+    trisha_paytas = get_channel_video_count("UCy2A0jf5lYUYQxi7iKHmHhQ")
+    james_charles = get_channel_video_count("UCucot-Zp428OwkyRm2I7v2Q")
+    pewdiepie = get_channel_video_count("UC-lHJZR3Gqxm24_Vd_AJ5Yw")
+    ryan_higa = get_channel_video_count("UCSAUGyc_xA8uYzaIVG6MESQ")
+    stephanie_soo = get_channel_video_count("UCo9ZZ04kIhN_8xGxvnjaduQ")
+    logan_paul = get_channel_video_count("UCG8rbF3g2AMX70yOd8vqIZg")
+
+
+
+
