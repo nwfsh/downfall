@@ -90,7 +90,7 @@ def get_channel_video_ids_in_window(channel_id: str, start_date: str, end_date: 
 
     while True:
         params = {
-            "part": "snippet,contentDetails",
+            "part": "contentDetails,status,snippet",
             "playlistId": playlist_id,
             "maxResults": 50, # youtube will give u maximum 50 anwaysy 
             "key": API_KEY,
@@ -101,13 +101,24 @@ def get_channel_video_ids_in_window(channel_id: str, start_date: str, end_date: 
         resp.raise_for_status()
         data = resp.json()
 
-        done = False 
+        done = False
         for item in data.get("items", []):
-            published = datetime.fromisoformat(
-                item["snippet"]["publishedAt"].replace("Z", "+00:00")
-            )
-            # break here if went through all the videos after start date even if
-            # more vidoes out there 
+            snippet = item.get("snippet", {})
+            published_str = snippet.get("publishedAt")
+            title = snippet.get("title", "")
+            privacy = item.get("status", {}).get("privacyStatus", "unknown")
+
+            if title in ("Private video", "Deleted video") or not published_str:
+                video_ids.append({
+                    "video_id": item["contentDetails"]["videoId"],
+                    "status": title or privacy,
+                    "published_at": None,
+                    "flagged": True,
+                })
+                continue
+
+            published = datetime.fromisoformat(published_str.replace("Z", "+00:00"))
+
             if published < start_dt:
                 done = True
                 break
@@ -137,7 +148,7 @@ def get_video_links_for_creator(channel_id: str, start_date: str = None, end_dat
         video_ids = get_channel_video_ids_in_window(channel_id, start_date, end_date)
     else:
         video_ids = get_all_channel_video_ids(channel_id)
-    return [video_id_to_url(vid) for vid in video_ids]
+    return [video_id_to_url(vid) for vid in video_ids if isinstance(vid, str)]
 
 
 def land_video_links(channel_id: str, label: str, links: list[str]):
@@ -194,19 +205,59 @@ if __name__ == "__main__":
     #     {"label": "Logan Paul", "channel_id": "TODO_channel_id", "start_date": "2017-11-01", "end_date": "2018-03-01"},
     # ]
 
-    # process_creators(CALIBRATION_SET)
+
 
     # quick test
     # count = get_channel_video_count("UCenxjWEkb0Sv67vejOgZ3Tg")
     # ids = get_channel_video_ids_in_window("UCenxjWEkb0Sv67vejOgZ3Tg", "2026-05-01", "2026-06-01")
     # print(ids[:5])
 
-    trisha_paytas = get_channel_video_count("UCy2A0jf5lYUYQxi7iKHmHhQ")
-    james_charles = get_channel_video_count("UCucot-Zp428OwkyRm2I7v2Q")
-    pewdiepie = get_channel_video_count("UC-lHJZR3Gqxm24_Vd_AJ5Yw")
-    ryan_higa = get_channel_video_count("UCSAUGyc_xA8uYzaIVG6MESQ")
-    stephanie_soo = get_channel_video_count("UCo9ZZ04kIhN_8xGxvnjaduQ")
-    logan_paul = get_channel_video_count("UCG8rbF3g2AMX70yOd8vqIZg")
+    CALIBRATION_SET = [
+    # Multiple controversies. Tati Westbrook "Bye Sister" May 10 2019; James lost ~3M subs in days;
+    # "No More Lies" response May 18. Baseline before, spike, early recovery — all inside 6 weeks.
+    {"label": "James Charles", "channel_id": "UCucot-Zp428OwkyRm2I7v2Q",
+     "start_date": "2019-05-01", "end_date": "2019-06-15"},   # ~6-8 videos
+
+    # Known downfall, subscriber-immune. WSJ article + Disney/YouTube Red drop Feb 13-14 2017;
+    # "My Response" Feb 16. Daily uploader then — window kept tight on purpose.
+    {"label": "PewDiePie", "channel_id": "UC-lHJZR3Gqxm24_Vd_AJ5Yw",
+     "start_date": "2017-02-01", "end_date": "2017-03-05"},   # ~30 videos
+
+    # Single event, best-documented recovery mechanism. Aokigahara video Dec 31 2017; removed +
+    # apologies Jan 1-2; ~3 weeks of silence; suicide-prevention return video Jan 24 2018.
+    {"label": "Logan Paul", "channel_id": "UCG8rbF3g2AMX70yOd8vqIZg",
+     "start_date": "2017-12-15", "end_date": "2018-02-10"},   # ~15-25 videos
+
+    # Single event, recovered — mechanism deliberately left for the pipeline to find.
+    # Her Nikocado video ~Dec 21 2019; his rebuttal shifted backlash onto her late Dec.
+    {"label": "Stephanie Soo", "channel_id": "UCo9ZZ04kIhN_8xGxvnjaduQ",
+     "start_date": "2019-12-10", "end_date": "2020-01-31"},   # ~15-20 videos
+
+    # Controversial-by-design, chronic — NEGATIVE test for false change-points on a
+    # naturally-hot baseline. Window around Frenemies podcast ending (~June 8 2021), one of many.
+    {"label": "Trisha Paytas", "channel_id": "UCF2oW5-MO8dB6ul9WH9xi0A",
+     "start_date": "2021-05-25", "end_date": "2021-07-05"},   # posts multiple/day — cap matters most here
+
+    # Vanilla, never cancelled — NEGATIVE control, expect ~zero change points.
+    # No event; any active-posting window works. Pre-2020 hiatus.
+    {"label": "Ryan Higa", "channel_id": "UCSAUGyc_xA8uYzaIVG6MESQ",
+     "start_date": "2019-05-01", "end_date": "2019-06-30"},   # ~8 videos
+]
+    process_creators(CALIBRATION_SET)
+
+    # trisha_paytas = get_channel_video_count("UCy2A0jf5lYUYQxi7iKHmHhQ")
+    # james_charles = get_channel_video_count("UCucot-Zp428OwkyRm2I7v2Q")
+    # pewdiepie = get_channel_video_count("UC-lHJZR3Gqxm24_Vd_AJ5Yw")
+    # ryan_higa = get_channel_video_count("UCSAUGyc_xA8uYzaIVG6MESQ")
+    # stephanie_soo = get_channel_video_count("UCo9ZZ04kIhN_8xGxvnjaduQ")
+    # logan_paul = get_channel_video_count("UCG8rbF3g2AMX70yOd8vqIZg")
+
+#     UCy2A0jf5lYUYQxi7iKHmHhQ has 394 public videos.
+# UCucot-Zp428OwkyRm2I7v2Q has 726 public videos.
+# UC-lHJZR3Gqxm24_Vd_AJ5Yw has 4665 public videos.
+# UCSAUGyc_xA8uYzaIVG6MESQ has 403 public videos.
+# UCo9ZZ04kIhN_8xGxvnjaduQ has 376 public videos.
+# UCG8rbF3g2AMX70yOd8vqIZg has 802 public videos.
 
 
 
