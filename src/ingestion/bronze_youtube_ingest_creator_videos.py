@@ -104,30 +104,23 @@ def get_channel_video_ids_in_window(channel_id: str, start_date: str, end_date: 
         done = False
         for item in data.get("items", []):
             snippet = item.get("snippet", {})
-            published_str = snippet.get("publishedAt")
+            published_str = snippet.get("publishedAt") or item.get("contentDetails", {}).get("videoPublishedAt")
             title = snippet.get("title", "")
-            privacy = item.get("status", {}).get("privacyStatus", "unknown")
 
             if title in ("Private video", "Deleted video") or not published_str:
-                video_ids.append({
-                    "video_id": item["contentDetails"]["videoId"],
-                    "status": title or privacy,
-                    "published_at": None,
-                    "flagged": True,
-                })
                 continue
 
             published = datetime.fromisoformat(published_str.replace("Z", "+00:00"))
 
             if published < start_dt:
                 done = True
-                break
+                continue  # finish the page, don't exit mid-page
+
             if published <= end_dt:
                 video_ids.append(item["contentDetails"]["videoId"])
 
-        # so you can grab the next 50 videos !! 
         page_token = data.get("nextPageToken")
-        if done or not page_token: # no more, pages then stop 
+        if done or not page_token:
             break
 
     print(f"Found {len(video_ids)} videos for channel {channel_id} between {start_date} and {end_date}.")
@@ -148,7 +141,7 @@ def get_video_links_for_creator(channel_id: str, start_date: str = None, end_dat
         video_ids = get_channel_video_ids_in_window(channel_id, start_date, end_date)
     else:
         video_ids = get_all_channel_video_ids(channel_id)
-    return [video_id_to_url(vid) for vid in video_ids if isinstance(vid, str)]
+    return [video_id_to_url(vid) for vid in video_ids]
 
 
 def land_video_links(channel_id: str, label: str, links: list[str]):
@@ -184,7 +177,7 @@ def process_creators(creators: list[dict]) -> dict:
         print(f"=== {label} ===")
         links = get_video_links_for_creator(channel_id, start_date, end_date)
         land_video_links(channel_id, label, links)
-        results[label] = links 
+        results[label] = links
 
     return results
 

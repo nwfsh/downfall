@@ -114,8 +114,11 @@ def land_raw_json(payload, video_id: str, kind: str):
         json.dump(payload, f, indent=2)
     print(f"Landed {kind} → {out_path}") 
 
-## joining all the helper functions together 
 def ingest_video(video_id: str):
+    if list(OUTPUT_DIR.glob(f"comments_{video_id}_*.json")):
+        print(f"Already ingested {video_id}, skipping.")
+        return
+
     print(f"Pulling metadata for {video_id}...")
     metadata = get_youtube_metadata(video_id)
     land_raw_json(metadata, video_id, "video_metadata")
