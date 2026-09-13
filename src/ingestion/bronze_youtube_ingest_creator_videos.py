@@ -132,7 +132,7 @@ def video_id_to_url(video_id: str) -> str:
     return f"https://www.youtube.com/watch?v={video_id}"
 
 
-def get_video_links_for_creator(channel_id: str, start_date: str = None, end_date: str = None) -> list[str]:
+def get_video_ids_for_creator(channel_id: str, start_date: str = None, end_date: str = None) -> list[str]:
     """
     all video links from one creator
     if there is a start_date & end_date, only collect videos between that
@@ -141,15 +141,16 @@ def get_video_links_for_creator(channel_id: str, start_date: str = None, end_dat
         video_ids = get_channel_video_ids_in_window(channel_id, start_date, end_date)
     else:
         video_ids = get_all_channel_video_ids(channel_id)
-    return [video_id_to_url(vid) for vid in video_ids]
+    return video_ids 
 
 
-def land_video_links(channel_id: str, label: str, links: list[str]):
+def land_video_links(channel_id: str, label: str, video_ids: list[str]):
     """writes list of video links to the disk as a JSON file"""
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     ts = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
     safe_label = label.lower().replace(" ", "_") if label else channel_id
     out_path = OUTPUT_DIR / f"video_links_{safe_label}_{ts}.json"
+    links = [video_id_to_url(vid) for vid in video_ids]
     payload = {
         "channel_id": channel_id,
         "label": label,
@@ -175,9 +176,9 @@ def process_creators(creators: list[dict]) -> dict:
         end_date = creator.get("end_date")
 
         print(f"=== {label} ===")
-        links = get_video_links_for_creator(channel_id, start_date, end_date)
-        land_video_links(channel_id, label, links)
-        results[label] = links
+        video_ids = get_video_ids_for_creator(channel_id, start_date, end_date)
+        land_video_links(channel_id, label, video_ids)
+        results[label] = video_ids
 
     return results
 
