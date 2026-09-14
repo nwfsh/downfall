@@ -3,7 +3,8 @@ from datetime import datetime
 from airflow import DAG
 from airflow.operators.python import PythonOperator
 
-from bronze_youtube_ingest_creator_videos import get_video_ids_for_creator
+
+from bronze_youtube_ingest_creator_videos import get_video_ids_for_creator, land_video_links # added another to store 
 from bronze_youtube_ingest_comments import ingest_video
 
 
@@ -22,29 +23,31 @@ def pull_creator_videos():
 
     for creator in CALIBRATION_SET:
         ## return links, flagged, ignore flagged but need to unpack them
-        video_id, _ = get_video_ids_for_creator(
+        video_id = get_video_ids_for_creator(
             creator["channel_id"], ## will raise error if returns nothing
             creator.get("start_date"), ## allows returning nothing 
             creator.get("end_date") ## get() allows returning nothing
         )
 
-        video_ids.append(video_id)
+        land_video_links(creator["channel_id"], creator["label"], video_id)
+        video_ids.extend(video_id) # append is one object, extend iterates and add all into list
         print(f"total ingested: {len(video_ids)}") #cross check with the amount 
     return video_ids
 
 
 def pull_comments(**context): ## allows a function to take in multiple parameters 
-    ti = context["ti"]
+    ti = context["ti"] ## pull out only the parameters u needed which was the ti 
     video_ids = ti.xcom_pull(task_ids="pull_creator_videos")
     for video_id in video_ids:
         ingest_video(video_id)
 
 
-with DAG(   
-    dag_id="youtube_bronze_pipeline",
-    start_date=datetime(2026, 9, 1),
-    schedule_interval=None,  # manual trigger — this is a historical calibration pull
-    catchup=False,
+
+with DAG(
+    dag_id = "youtube_bronze_pipeline",
+    start_date = datetime(2026, 9, 13),
+    schedule_interval=None, # set manual trigger
+    catchup = False,
 ) as dag:
     pull_videos_task = PythonOperator(
         task_id="pull_creator_videos",
@@ -54,5 +57,4 @@ with DAG(
         task_id="pull_comments",
         python_callable=pull_comments,
     )
-
     pull_videos_task >> pull_comments_task
