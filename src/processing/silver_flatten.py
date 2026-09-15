@@ -19,7 +19,7 @@ from pyspark.sql import functions as F
 from pyspark.sql.functions import pandas_udf
 from pyspark.sql.types import ArrayType, FloatType, StringType, StructField, StructType
 
-BRONZE_DIR = Path("bronze/raw")
+BRONZE_DIR = Path("bronze/all_comments")
 SILVER_DIR = Path("silver")
 SILVER_DIR.mkdir(exist_ok=True) # make this folder if it doesnt exist, if it does exist dont create any errors
 
@@ -80,7 +80,7 @@ def flatten_comment_files(spark) -> "pyspark.sql.DataFrame":
                     r = comment["snippet"]
                     rows.append({
                         "comment_id": comment["id"],
-                        "parent_comment_id": item["id"], 
+                        "parent_comment_id": thread["parentId"],
                         "video_id": video_id,
                         "text": r.get("textOriginal", ""),
                         "like_count": r.get("likeCount", 0),
