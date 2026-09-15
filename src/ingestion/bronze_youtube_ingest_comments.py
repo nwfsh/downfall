@@ -57,7 +57,7 @@ def get_remaining_replies(parent_id: str) -> dict:
 
 # pls note this does not remove the duplicate of the top 4 replies, this is raw ingestion rn, will
 # remove duplicate replies later
-def get_all_comments(video_id: str) -> dict:
+def get_all_comments(video_id: str, fetch_full_replies: bool = True) -> dict:
     """
     Get all comment threads + full replies for a video.
     - commentThreads.list: 1 unit per page (max 100 threads), returns up to 4 replies inline
@@ -99,8 +99,12 @@ def get_all_comments(video_id: str) -> dict:
         if not page_token:
             break
 
-    print(f"{len(threads_needing_full_replies)} threads have uncaptured replies, fetching...")
-    full_replies = [get_remaining_replies(pid) for pid in threads_needing_full_replies]
+    if fetch_full_replies:
+        print(f"{len(threads_needing_full_replies)} threads have uncaptured replies, fetching...")
+        full_replies = [get_remaining_replies(pid) for pid in threads_needing_full_replies]
+    else:
+        print(f"Skipping full reply expansion ({len(threads_needing_full_replies)} threads).")
+        full_replies = []
 
     return {"threads": comments, "full_replies": full_replies}
 
@@ -114,7 +118,7 @@ def land_raw_json(payload, video_id: str, kind: str):
         json.dump(payload, f, indent=2)
     print(f"Landed {kind} → {out_path}") 
 
-def ingest_video(video_id: str):
+def ingest_video(video_id: str, fetch_full_replies: bool = True):
     if list(OUTPUT_DIR.glob(f"comments_{video_id}_*.json")):
         print(f"Already ingested {video_id}, skipping.")
         return
@@ -124,7 +128,7 @@ def ingest_video(video_id: str):
     land_raw_json(metadata, video_id, "video_metadata")
 
     print(f"Pulling comments for {video_id}...")
-    comments = get_all_comments(video_id)
+    comments = get_all_comments(video_id, fetch_full_replies=fetch_full_replies)
     land_raw_json(comments, video_id, "comments")
 
     thread_pages = comments["threads"] ## get the dict 

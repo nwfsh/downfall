@@ -39,7 +39,7 @@ def pull_comments(**context): ## allows a function to take in multiple parameter
     ti = context["ti"] ## pull out only the parameters u needed which was the ti 
     video_ids = ti.xcom_pull(task_ids="pull_creator_videos")
     for video_id in video_ids:
-        ingest_video(video_id)
+        ingest_video(video_id, fetch_full_replies=False)
 
 
 
