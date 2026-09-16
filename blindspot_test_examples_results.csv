@@ -1,0 +1,86 @@
+text,category,mode,hate_label
+Girls are inferior to men.,sexism,hostile,sexism
+Girls are only good for being housewives.,sexism,hostile,sexism
+Men should take care of women as they are naturally weaker.,sexism,benevolent,sexism
+Men should take care of women as they are divine creatures to care for.,sexism,benevolent,sexism
+Nurturing is what women are best at.,sexism,benevolent,not_hate
+Women are as capable as men.,sexism,control,sexism
+The patriarchy makes women believe they are dumber than men.,sexism,critique,sexism
+I think men and women should just follow their gender roles.,sexism,covert,sexism
+I feel like gender roles shouldn't exist.,sexism,control,not_hate
+Gay people do not deserve rights.,sexual_orientation,hostile,sexual_orientation
+I don't care if there is gay people as long as they are not around me.,sexual_orientation,covert,sexual_orientation
+Gay men are so fragile.,sexual_orientation,covert,not_hate
+Gay men are broken men who came from broken families.,sexual_orientation,covert,not_hate
+Gay men make the best friends to girls.,sexual_orientation,benevolent,not_hate
+Gay people can get married if they want to be.,sexual_orientation,control,not_hate
+Love whoever you want.,sexual_orientation,control,not_hate
+We should have just aborted all people with down syndrome.,disability,hostile,not_hate
+Why should a company ever hire an autistic person?,disability,hostile,not_hate
+Neurodivergent people just can't do anything.,disability,hostile,not_hate
+Down syndrome people are the most wholesome people in the world.,disability,benevolent,not_hate
+It makes me uncomfortable that people with down syndrome want to have sex.,disability,covert,not_hate
+Psychopaths should kill themselves.,mental_health,hostile,religion
+Are jails unethical towards prisoners?,criminal_status,critique,not_hate
+All prisoners are horrible people who deserve what came to them.,criminal_status,hostile,not_hate
+You are gonna go to hell for not believing in god.,religion,hostile,not_hate
+The hijabi can be oppressive.,religion,critique,religion
+Christianity is why everyone is sexist.,religion,critique,not_hate
+Buddhism is a terrifying concept.,religion,critique,religion
+"I do not care for your religious beliefs, I care if you are a caring person.",religion,control,not_hate
+I hope we can all come together despite our religious beliefs.,religion,control,not_hate
+You're not like other indian girls.,race,covert,not_hate
+I hate black people.,race,hostile,racism
+Asian people are so much more smarter.,race,benevolent,not_hate
+Asian education system trains their students to be better at math.,race,control,not_hate
+Women make up a large portion of the workforce today.,sexism,control,not_hate
+My sister just started a new job in engineering.,sexism,control,not_hate
+Men and women both serve in the military.,sexism,control,not_hate
+She's the best programmer on our team.,sexism,control,not_hate
+Gender equality has improved a lot over the last decade.,sexism,control,not_hate
+My friend came out as gay last year and we're closer than ever.,sexual_orientation,control,not_hate
+Same-sex couples can adopt children in most states.,sexual_orientation,control,not_hate
+He's dating a man now and seems really happy.,sexual_orientation,control,not_hate
+Pride month is celebrated every June.,sexual_orientation,control,not_hate
+My roommate is bisexual and we get along great.,sexual_orientation,control,not_hate
+My cousin has autism and he's really good at chess.,disability,control,not_hate
+The new building has wheelchair accessible entrances.,disability,control,not_hate
+She uses a hearing aid and it works great for her.,disability,control,not_hate
+People with disabilities have the right to reasonable workplace accommodations.,disability,control,not_hate
+My coworker has ADHD and manages it really well.,disability,control,not_hate
+He goes to therapy every week and finds it helpful.,mental_health,control,not_hate
+Depression is more common than people realize.,mental_health,control,not_hate
+She talks openly about her anxiety with her friends.,mental_health,control,not_hate
+Mental health days are becoming more normalized at work.,mental_health,control,not_hate
+My therapist recommended a new coping strategy this week.,mental_health,control,not_hate
+My neighbor immigrated from Mexico ten years ago.,nationality,control,not_hate
+Many students at my school are international.,nationality,control,not_hate
+He moved here from Korea for a new job opportunity.,nationality,control,not_hate
+Our city has a large immigrant population.,nationality,control,not_hate
+She got her citizenship last spring.,nationality,control,not_hate
+My grandmother is Catholic and goes to church every Sunday.,religion,control,not_hate
+He converted to Islam a few years ago.,religion,control,not_hate
+My friend is an atheist and we still have great conversations about faith.,religion,control,not_hate
+Buddhism emphasizes mindfulness and meditation.,religion,control,not_hate
+She wears a hijab and works as a doctor.,religion,control,not_hate
+My uncle is Black and works as a firefighter.,race,control,not_hate
+She's mixed race and speaks three languages.,race,control,not_hate
+His family is originally from Nigeria.,race,control,not_hate
+My best friend is Korean and taught me how to cook bulgogi.,race,control,not_hate
+The neighborhood has a really diverse mix of cultures.,race,control,not_hate
+It's supposed to rain later this afternoon.,none,control,not_hate
+I'm thinking about getting a new laptop soon.,none,control,not_hate
+The coffee shop down the street just reopened.,none,control,not_hate
+My flight got delayed by two hours yesterday.,none,control,not_hate
+I finally finished reading that book last night.,none,control,not_hate
+The gym was really crowded this morning.,none,control,not_hate
+We're planning a road trip for next month.,none,control,not_hate
+My internet has been really slow lately.,none,control,not_hate
+I just adopted a puppy from the shelter.,none,control,not_hate
+The new season of that show just came out.,none,control,not_hate
+I need to do laundry before work tomorrow.,none,control,not_hate
+The bus was late again this morning.,none,control,not_hate
+I tried a new recipe for dinner last night.,none,control,not_hate
+My phone battery died in the middle of the day.,none,control,not_hate
+We're repainting the living room this weekend.,none,control,not_hate
+I finally organized my closet after months of putting it off.,none,control,not_hate
