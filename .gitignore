@@ -222,3 +222,6 @@ bronze
 
 quiz.html
 quiz.py
+
+.DS_Store
+airflow_docker/logs/
